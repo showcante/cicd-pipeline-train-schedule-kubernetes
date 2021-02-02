@@ -1,5 +1,6 @@
-id: check-yaml
-args: [--allow-multiple-documents]
+hooks:
+-   id: check-yaml
+    args: [--allow-multiple-documents]
 kind: Service
 apiVersion: v1
 metadata:

@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         //be sure to replace "willbla" with your own Docker Hub username
-        DOCKER_IMAGE_NAME = "showcante/train-schedule"
+        DOCKER_IMAGE_NAME = "willbla/train-schedule"
     }
     stages {
         stage('Build') {
@@ -50,11 +50,6 @@ pipeline {
                     configs: 'train-schedule-kube.yml',
                     enableConfigSubstitution: true
                 )
-                kubernetesDeploy(
-                    kubeconfigId: 'kubeconfig',
-                    configs: 'train-schedule-kube2.yml',
-                    enableConfigSubstitution: true
-                    )
             }
         }
     }
